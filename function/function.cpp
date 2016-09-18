@@ -1,9 +1,10 @@
+#include <SDL.h>
 #include <gl/glut.h>
 #include <glm\glm.hpp>
 #include <stdlib.h>
 #include <math.h>
 
-static const int WINDOW_WIDTH = 700;
+static const int WINDOW_WIDTH = 1200;
 static const int WINDOW_HEIGHT = 672;
 
 #define ESCAPE '\033'
@@ -62,7 +63,7 @@ void Keyboard(unsigned char key, int x, int y)
 	}
 }
 
-void main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB);
@@ -74,4 +75,5 @@ void main(int argc, char* argv[])
 	glutKeyboardFunc(Keyboard);
 
 	glutMainLoop();
+	return 0;
 }
