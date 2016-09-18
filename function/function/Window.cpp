@@ -15,15 +15,11 @@ namespace
 
 	void DrawFunction(const glm::ivec2 & size)
 	{
-
 		glBegin(GL_LINE_STRIP);
-		for (float x = 0; x <= 10; x += 0.1)
+		for (float x = -10; x <= 10; x += 0.1)
 		{
 			float y = std::sin(x) / x;
-			
-				std::cout << y << std::endl;
-			
-			glVertex2d(x * 100.f + size.x/2, -y *100.f + size.y / 2);
+			glVertex2d(size.x/2 + x*20.f, size.y / 2 - y *70.f);
 		}
 		glEnd();
 	}
