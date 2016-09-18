@@ -12,7 +12,8 @@
 
 namespace
 {
-	static const glm::vec2 SCALE(0.05f, 0.3f);
+	static const glm::vec2 SCALE(0.15f, 0.4f);
+	static const float STEP = 0.1f;
 	static const glm::vec2 BORDER(-10.f, 10.f);
 
 	glm::vec2 GetCenterWindow(const glm::ivec2 & size)
@@ -23,7 +24,7 @@ namespace
 	void DrawFunction(const glm::ivec2 & center)
 	{
 		glBegin(GL_LINE_STRIP);
-		for (float x = BORDER.x; x <= BORDER.y; x += 0.1)
+		for (float x = BORDER.x; x <= BORDER.y; x += STEP)
 		{
 			float y = std::sin(x) / x;
 			glVertex2d(center.x + x*SCALE.x *center.x / 2, center.y - y *SCALE.y * center.y);
@@ -31,7 +32,7 @@ namespace
 		glEnd();
 	}
 
-	void DrawCoordinateSystem(const glm::ivec2 & size)
+	void DrawCoordinateSystem(const glm::fvec2 & size)
 	{
 		glBegin(GL_LINES);
 		    glVertex2f(0.0f, size.y / 2.f);
