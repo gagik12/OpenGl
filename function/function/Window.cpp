@@ -1,14 +1,4 @@
 #include "stdafx.h"
-#include <glm/vec2.hpp>
-#include <glm/vec4.hpp>
-#include <GL/glew.h>
-#include <GL/gl.h>
-#include <glm/gtc/type_ptr.hpp>
-#include <glm/mat4x4.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <SDL.h>
-#include "Window.h"
-#include <iostream>
 
 namespace
 {
@@ -24,6 +14,7 @@ namespace
 	void DrawFunction(const glm::ivec2 & center)
 	{
 		glBegin(GL_LINE_STRIP);
+
 		for (float x = BORDER.x; x <= BORDER.y; x += STEP)
 		{
 			float y = std::sin(x) / x;
@@ -32,18 +23,18 @@ namespace
 		glEnd();
 	}
 
-	void DrawTriangles(const glm::ivec2 & size)
+	void DrawTriangles(const glm::fvec2 & size)
 	{
 		glBegin(GL_TRIANGLE_FAN);
-	    	glVertex2f(size.x / 2 - 7, 14);
-		    glVertex2f(size.x / 2, 0.0f);
-		    glVertex2f(size.x / 2 + 7, 14);
+	    	glVertex2f(size.x / 2.f - 7, 14);
+		    glVertex2f(size.x / 2.f, 0.0f);
+		    glVertex2f(size.x / 2.f + 7, 14);
 		glEnd();
 
 		glBegin(GL_TRIANGLE_FAN);
-		    glVertex2f(size.x - 14, size.y / 2 - 7);
-		    glVertex2f(size.x, size.y / 2);
-		    glVertex2f(size.x - 14, size.y / 2 + 7);
+		    glVertex2f(size.x - 14, size.y / 2.f - 7);
+		    glVertex2f(size.x, size.y / 2.f);
+		    glVertex2f(size.x - 14, size.y / 2.f + 7);
 		glEnd();
 
 	}

@@ -13,6 +13,10 @@ protected:
 
 	void OnDrawWindow(const glm::ivec2 & size) override;
 
+
 private:
 	void SetupView(const glm::ivec2 & size);
+
+
+	glm::vec2 m_dragOffset;
 };

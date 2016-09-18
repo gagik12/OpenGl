@@ -5,13 +5,7 @@
 #ifdef _WIN32
 #include <Windows.h>
 #endif
-#include <GL/gl.h>
 
-#include <glm/vec2.hpp>
-#include <glm/vec4.hpp>
-#include <chrono>
-#include <type_traits>
-#include <iostream>
 
 namespace
 {
