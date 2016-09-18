@@ -1,9 +1,10 @@
-#include <GL/glut.h>
+#include <gl/glut.h>
 #include <stdlib.h>
 #include <math.h>
-GLint Width = 512, Height = 512; //начальные размеры окна
+static const int WINDOW_WIDTH = 512;
+static const int WINDOW_HEIGHT = 512;
 
-								 //Функция вырисовки на экране
+							
 void Display()
 {
 
@@ -22,23 +23,20 @@ void Display()
 
 	glColor3d(0, 0, 1);
 	glBegin(GL_LINE_STRIP);
-	for (double i = 0; i < 10; i += 0.1)
-		glVertex2d(i, sin(i));
+	for (double i = -10; i < 10; i += 0.1)
+		glVertex2d(i, sin(i)/i);
 	glEnd();
 
 	glFinish();
 }
 
-//Функция вызывается при изменении размеров окна
 void Reshape(GLint w, GLint h)
 {
-	Width = w;
-	Height = h;
+	int width = w;
+	int weight = h;
 
-	// устанавливаем размеры области отображения
 	glViewport(0, 0, w, h);
 
-	// отрографическая проекция
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(-2, 12, -2, 2, -1, 1);
@@ -47,7 +45,6 @@ void Reshape(GLint w, GLint h)
 	glLoadIdentity();
 }
 
-// Функция обработки сообщений с клавиатуры
 void Keyboard(unsigned char key, int x, int y)
 {
 #define ESCAPE '\033'
@@ -55,13 +52,12 @@ void Keyboard(unsigned char key, int x, int y)
 		exit(0);
 }
 
-// Главный цикл приложения
 void main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB);
-	glutInitWindowSize(Width, Height);
-	glutCreateWindow("Sin(x)");
+	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+	glutCreateWindow("Function[CG]");
 
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Reshape);
