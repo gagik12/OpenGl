@@ -32,8 +32,25 @@ namespace
 		glEnd();
 	}
 
+	void DrawTriangles(const glm::ivec2 & size)
+	{
+		glBegin(GL_TRIANGLE_FAN);
+	    	glVertex2f(size.x / 2 - 7, 14);
+		    glVertex2f(size.x / 2, 0.0f);
+		    glVertex2f(size.x / 2 + 7, 14);
+		glEnd();
+
+		glBegin(GL_TRIANGLE_FAN);
+		    glVertex2f(size.x - 14, size.y / 2 - 7);
+		    glVertex2f(size.x, size.y / 2);
+		    glVertex2f(size.x - 14, size.y / 2 + 7);
+		glEnd();
+
+	}
+
 	void DrawCoordinateSystem(const glm::fvec2 & size)
 	{
+		DrawTriangles(size);
 		glBegin(GL_LINES);
 		    glVertex2f(0.0f, size.y / 2.f);
 	        glVertex2f(size.x, size.y / 2.f);
