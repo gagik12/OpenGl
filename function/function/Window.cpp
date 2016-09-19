@@ -17,7 +17,7 @@ namespace
 
 		for (float x = BORDER.x; x <= BORDER.y; x += STEP)
 		{
-			float y = std::sin(x) / x;
+			float y = sin(x) / x;
 			glVertex2d(center.x + x*SCALE.x *center.x / 2, center.y - y *SCALE.y * center.y);
 		}
 		glEnd();
