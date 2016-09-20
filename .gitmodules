@@ -1,3 +1,3 @@
 [submodule "glew-bin"]
 	path = libs/glew-bin
-	url = git@github.com:alexey-malov/glew-bin.git
+	url = https://github.com/alexey-malov/glew-bin.git
