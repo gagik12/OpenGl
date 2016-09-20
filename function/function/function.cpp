@@ -1,9 +1,5 @@
 #include "stdafx.h"
-
-#ifdef _WIN32
-#undef main
-#endif
-
+#include "Window.h"
 
 int main()
 {

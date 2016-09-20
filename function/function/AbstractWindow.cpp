@@ -1,10 +1,5 @@
 ﻿#include "stdafx.h"
 #include "AbstractWindow.h"
-#include <SDL_video.h>
-
-#ifdef _WIN32
-#include <Windows.h>
-#endif
 
 
 namespace

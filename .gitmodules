@@ -1,0 +1,9 @@
+[submodule "glew-bin"]
+	path = libs/glew-bin
+	url = https://github.com/alexey-malov/glew-bin.git
+[submodule "glm"]
+	path = libs/glm
+	url = https://github.com/alexey-malov/glm.git
+[submodule "sdl2-bin"]
+	path = libs/sdl2-bin
+	url = https://github.com/alexey-malov/sdl2-bin.git
