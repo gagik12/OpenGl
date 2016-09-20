@@ -3,54 +3,7 @@
 
 namespace
 {
-	static const glm::vec2 SCALE(0.15f, 0.4f);
-	static const float STEP = 0.1f;
-	static const glm::vec2 BORDER(-10.f, 10.f);
-
-	glm::vec2 GetCenterWindow(const glm::ivec2 & size)
-	{
-		return glm::vec2(size.x / 2, size.y / 2);
-	}
-
-	void DrawFunction(const glm::ivec2 & center)
-	{
-		glBegin(GL_LINE_STRIP);
-
-		for (float x = BORDER.x; x <= BORDER.y; x += STEP)
-		{
-			float y = sin(x) / x;
-			glVertex2d(center.x + x*SCALE.x *center.x / 2, center.y - y *SCALE.y * center.y);
-		}
-		glEnd();
-	}
-
-	void DrawTriangles(const glm::fvec2 & size)
-	{
-		glBegin(GL_TRIANGLE_FAN);
-	    	glVertex2f(size.x / 2.f - 7, 14);
-		    glVertex2f(size.x / 2.f, 0.0f);
-		    glVertex2f(size.x / 2.f + 7, 14);
-		glEnd();
-
-		glBegin(GL_TRIANGLE_FAN);
-		    glVertex2f(size.x - 14, size.y / 2.f - 7);
-		    glVertex2f(size.x, size.y / 2.f);
-		    glVertex2f(size.x - 14, size.y / 2.f + 7);
-		glEnd();
-
-	}
-
-	void DrawCoordinateSystem(const glm::fvec2 & size)
-	{
-		DrawTriangles(size);
-		glBegin(GL_LINES);
-		    glVertex2f(0.0f, size.y / 2.f);
-	        glVertex2f(size.x, size.y / 2.f);
-
-		    glVertex2f(size.x / 2.f, 0.0f);
-		    glVertex2f(size.x / 2.f, size.y);
-		glEnd();
-	}
+	
 
 }
 CWindow::CWindow()
