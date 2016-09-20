@@ -1,10 +1,5 @@
 #pragma once
 
-#include <memory>
-#include <boost/noncopyable.hpp>
-#include <glm/fwd.hpp>
-#include <SDL_events.h>
-
 class CAbstractWindow : private boost::noncopyable
 {
 public:
