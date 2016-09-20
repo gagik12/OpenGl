@@ -7,3 +7,6 @@
 [submodule "sdl2-bin"]
 	path = libs/sdl2-bin
 	url = https://github.com/alexey-malov/sdl2-bin.git
+[submodule "sfml"]
+	path = libs/sfml
+	url = https://github.com/SFML/SFML.git
