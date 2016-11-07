@@ -7,4 +7,7 @@
 [submodule "sdl2-bin"]
 	path = libs/sdl2-bin
 	url = https://github.com/alexey-malov/sdl2-bin.git
+[submodule "sdl2s-bin"]
+	path = libs/sdl2s-bin
+	url = https://github.com/alexey-malov/sdl2-bin.git
 
